@@ -3,27 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/noto-serif" rel="stylesheet">                
-    <title>양유진의 생일</title>
-    <style>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GungsuhChe&display=swap">     
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Square:wght@400;700&display=swap">
 
+    <title>양유진의 생일</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3e4fbd0810d7f19aa74775a13478f01"></script>
+    <style>
+    
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed, 
+    figure, figcaption, footer, header, hgroup, 
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure, 
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+
+    body{font-family:'Nanum Square', sans-serif;line-height:1.5}
+    .tit_birthday{font-family:'GungsuhChe', sans-serif}
+    .tit_birthday{display:block;font-size:60px;font-weight:bold;text-align:center}
+    .txt_info{display:block;margin-top:5px;font-size:16px;font-weight:bold;text-align:center}
+    #map{height:500px;width:100%}
+    .info_layer{padding:10px;border-radius:10px;border:1px solid #ddd;background-color:#fff;transform:translateY(-80px)}
+    .tit_place{display:block;font-weight:bold;text-align:center}
+    .wrap_button{margin-top:10px}
+    .wrap_button a{padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold;line-height:30px;color:#333;background-color:#eee;text-decoration:none}
     </style>
 </head>
 <body>
     <strong class="tit_birthday">양유진<br>생일</strong>
-    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6330.63214552546!2d127.01871987770997!3d37.50046279999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca15846243f17%3A0x98f771d5f001559a!2z7Jeg7Yis!5e0!3m2!1sko!2skr!4v1700131135890!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+   <span class="txt_info">장소 : 강남역 엠투포차</span>
+   <span class="txt_info">시간 : 7시</span>
+   <span class="txt_info">*특별한 사유가 없는한 늦지 않는것을 원칙으로 합니다.</span>
    <div id="map"></div>
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f1eae204c52510779ebc373420bc66ae"></script>
-    
-    <script>
-        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-            mapOption = { 
-                center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-                level: 3 // 지도의 확대 레벨
+   <script>
+    kakao.maps.load(() => {
+            var mapContainer = document.getElementById('map');
+            var mapOption = { 
+                center: new kakao.maps.LatLng(37.50110, 127.0277),
+                level: 3
             };
-        
-        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-        var map = new kakao.maps.Map(mapContainer, mapOption); 
-        </script>
+
+            var map = new kakao.maps.Map(mapContainer, mapOption);
+
+            // 마커가 표시될 위치입니다 
+            var markerPosition  = new kakao.maps.LatLng(37.50110, 127.0277); 
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            marker.setMap(map);
+
+            var content = '<div class="info_layer"><strong class="tit_place">강남 엠투포차</strong><div class="wrap_button"><a href="https://kko.to/VHKGfWwley" target="_blank">카카오맵 보기</a> <a href="https://map.kakao.com/link/to/강남역 엠투포차,37.50110, 127.0277" target="_blank">길찾기</a></div></div>';
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position = new kakao.maps.LatLng(37.50110, 127.0277);  
+
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay = new kakao.maps.CustomOverlay({
+                position: position,
+                content: content   
+            });
+
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay.setMap(map);
+        });
+   </script>
 </body>
 </html>
