@@ -1,151 +1,139 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=GungsuhChe&display=swap">     
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Square:wght@400;700&display=swap">
-
-    <title>양유진의 생일퍼뤼 초대장</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <meta charset="UTF-8">
+  <meta content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width,viewport-fit=cover" name="viewport">
+  <meta property="og:image" content="https://yangyj94.github.io/yeji-brithday/brithday/images/og_img.png">
+  <title>2024 예지제</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!-- <script src="https://developers.kakao.com/sdk/js/kakao.js"></script> -->
-    <!-- <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3e4fbd0810d7f19aa74775a13478f01"></script>-->
-    <style>
-    
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
-    article, aside, canvas, details, embed, 
-    figure, figcaption, footer, header, hgroup, 
-    menu, nav, output, ruby, section, summary,
-    time, mark, audio, video {
-        margin: 0;
-        padding: 0;
-        border: 0;
-        font-size: 100%;
-        font: inherit;
-        vertical-align: baseline;
-    }
-    /* HTML5 display-role reset for older browsers */
-    article, aside, details, figcaption, figure, 
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
-    body {
-        line-height: 1;
-    }
-    ol, ul {
-        list-style: none;
-    }
-    blockquote, q {
-        quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-        content: '';
-        content: none;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
-    }
-    html, body{height:100%}
-    body{font-family:'Nanum Square', sans-serif;line-height:1.5;word-break:keep-all; }
-    .bg{position:absolute;top:0;left:0;right:0;bottom:0;background-image:linear-gradient(to right, red, orange, yellow, green, blue, indigo, purple);opacity:.8}
-    .tit_birthday, .txt_info{font-family:'GungsuhChe', sans-serif;text-align:justify}
-    .tit_birthday{display:block;height:70px;font-size:50px;font-weight:bold}
-    .tit_birthday::after, .txt_info::after{content:'';display:inline-block;width:100%}
-    .tit_birthday:last-of-type{padding-bottom:10px}
-    .tit_sm{font-size:14px;height:24px;text-align:center}
-    .txt_info{display:block;height:25px;margin-top:5px;font-size:16px;font-weight:bold}
-    .wrap_info{display:flex;flex-direction:column;justify-content:center;position:relative;height:55vh;padding:0 15vw;margin:0 auto;padding-top:10px;box-sizing:border-box}
-    #map{height:45vh;width:100%}
-    .info_layer{padding:10px;border-radius:10px;border:1px solid #ddd;background-color:#fff;transform:translateY(-90px)}
-    .tit_place{display:block;font-weight:bold;text-align:center}
-    .wrap_button{margin-top:10px}
-    .wrap_button a{padding:5px 10px;border-radius:20px;font-size:12px;font-weight:bold;line-height:30px;color:#333;background-color:#eee;text-decoration:none}
-    .txt_guide{color:red;height:auto}
-    .wrap_star{
-        position:absolute;
-        top:20px;
-        left:20px;
-      animation:circle 1.2s linear infinite;}
-      .wrap_star:last-of-type{top:47vh;left:auto;right:20px;}
-      .wrap_star:last-of-type .star{border-bottom-color:yellow}
-      .wrap_star:last-of-type .star::after{border-top-color:yellow}
-      .wrap_star:nth-last-of-type(2) .star{border-bottom-color:red}
-      .wrap_star:nth-last-of-type(2) .star::after{border-top-color:red}
-      .wrap_star:nth-last-of-type(2){left:auto;right:20px}
-      .wrap_star:nth-last-of-type(3){top:47vh;left:20px}
-      .wrap_star:nth-last-of-type(3) .star{border-bottom-color:blue}
-      .wrap_star:nth-last-of-type(3) .star::after{border-top-color:blue}
-
-    .star {
-        width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-bottom: 30px solid purple;
-      position: relative;
-    }
-    .star::after {
-        width: 0;
-      height: 0;
-      border-left: 20px solid transparent;
-      border-right: 20px solid transparent;
-      border-top: 30px solid purple;
-      position: absolute;
-      content: "";
-      top: 9px;
-      left: -20px;
-
-    }
-
-    @keyframes circle{
-        100%{
-            transform:rotate(360deg);
-            transform-origin:center;
-        }
-    }
-    </style>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f3e4fbd0810d7f19aa74775a13478f01"></script>
 </head>
 <body>
-    <div class="wrap_content">
-        <div class="bg"></div>
-        <div class="wrap_info">
-            <strong class="tit_birthday tit_sm">초 대 장</strong>
-            <strong class="tit_birthday">양 유 진</strong>
-            <strong class="tit_birthday">생 일</strong>
-            <span class="txt_info">일 시 : 2023.11.22 수요일</span>
-            <span class="txt_info">장 소 : 강 남 역 엠 투 포 차</span>
-            <span class="txt_info">시 간 : 7 시</span>
-            <span class="txt_info txt_guide">*특별한 사유가 없는한 늦지 않는것을 원칙으로 합니다.</span>
-            
-            <div class="wrap_star"><div class="star"></div></div>
-            <div class="wrap_star"><div class="star"></div></div>
-            <div class="wrap_star"><div class="star"></div></div>
-            <div class="wrap_star"><div class="star"></div></div>
+  <div class="container">
+    <main id="main" class="main">
+      <div class="wrap_letter">
+        <div class="envelop">
+          <div id="letter" class="letter">
+            <button type="button" class="btn_click" id="btnClick">Click me!</button>
+            <div class="cont">
+              <strong class="title"><span class="star">★</span> 2024 ㅇㅖㅈㅣㅈㅔ <span class="star">★</span></strong>
+              <div class="info">
+                <p>일정 : 7/25(목) 19시-24시</p>
+                <p>장소 : 이너프아일랜드 양재점</p>
+                <p>지참 : 양손가득 선물 (+각자 마실 drink)</p>
+              </div>
+              <div id="map"></div>
+              <p class="sub_txt">만들다 귀찮아짐 ㅈㅅ</p>
+              <div class="yeji2"><img src="images/yeji2.png" width="100" alt=""></div>
+              <div class="yeji2 midium"><img src="images/yeji2.png" width="140" alt=""></div>
+              <div class="yeji2 big"><img src="images/yeji2.png" width="180" alt=""></div>
+            </div>
+          </div>
+          <span class="cursor"></span>
         </div>
-        <div id="map"></div>
-    </div>
-   <script>
+      </div>
+      <div class="yeji">
+        <img src="images/yeji.png" width="250" alt="">
+      </div>
+      <div class="rolling">
+        <div class="inner">
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+          <span>눌러 <span class="cursor"></span></span>
+        </div>
+      </div>
+      <div class="bg_choonsik">
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div>  
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+        <div class="wrap_choonsik">
+          <span class="choonsik">
+            <img src="images/choonsik.png" width="80" alt="">
+          </span>
+        </div> 
+      </div>
+    </main>
+  </div>
+  <script>
+    const letterBtn = document.getElementById('btnClick');
+    const main = document.getElementById('main');
+
+    letterBtn.addEventListener('click', function(){
+      main.classList.add('on');
+    });
+
     kakao.maps.load(() => {
             var mapContainer = document.getElementById('map');
             var mapOption = { 
-                center: new kakao.maps.LatLng(37.50110, 127.0277),
+                center: new kakao.maps.LatLng(37.484895, 127.031279),
                 level: 3
             };
 
             var map = new kakao.maps.Map(mapContainer, mapOption);
 
             // 마커가 표시될 위치입니다 
-            var markerPosition  = new kakao.maps.LatLng(37.50110, 127.0277); 
+            var markerPosition  = new kakao.maps.LatLng(37.484895, 127.031279); 
 
             // 마커를 생성합니다
             var marker = new kakao.maps.Marker({
@@ -154,10 +142,10 @@
 
             marker.setMap(map);
 
-            var content = '<div class="info_layer"><strong class="tit_place">강남 엠투포차</strong><div class="wrap_button"><a href="https://kko.to/VHKGfWwley" target="_blank">카카오맵 보기</a> <a href="https://map.kakao.com/link/to/강남역 엠투포차,37.50110, 127.0277" target="_blank">길찾기</a></div></div>';
+            var content = '<div class="info_layer"><strong class="tit_place">이너프 아일랜드 양재점</strong><div class="wrap_button"><a href="https://kko.to/JZKUKA6JOq" target="_blank">카카오맵 보기</a> <a href="https://kko.to/tsiFCsyOFo" target="_blank">길찾기</a></div></div>';
 
             // 커스텀 오버레이가 표시될 위치입니다 
-            var position = new kakao.maps.LatLng(37.50110, 127.0277);  
+            var position = new kakao.maps.LatLng(37.484895, 127.031279);  
 
             // 커스텀 오버레이를 생성합니다
             var customOverlay = new kakao.maps.CustomOverlay({
@@ -168,6 +156,6 @@
             // 커스텀 오버레이를 지도에 표시합니다
             customOverlay.setMap(map);
         });
-   </script>
+  </script>
 </body>
 </html>
